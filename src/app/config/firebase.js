@@ -2,7 +2,7 @@ import { initializeApp } from
     "firebase/app";
 import { getAuth }
     from "firebase/auth";
-import { getFirestore, collection, query, where, addDoc, getDocs, doc, getDoc } from
+import { getFirestore, collection, addDoc, getDocs, doc, getDoc } from
     "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -39,10 +39,10 @@ const Facebook = async () => {
     }
 }
 
-async function postAds({ text, des ,city, file }) {
+async function postAds({ text,  file }) {
     try {
         const url = await uploadImages(file)
-        const data = { text, city, des, image: url }
+        const data = { text, image: url }
         await addDoc(collection(db, "ads"), data);
         alert("Succesfully")
     } catch (e) {

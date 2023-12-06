@@ -8,11 +8,12 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box !important;
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -29,5 +30,38 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-    background-color: white;
+  background-color: white;
+}
+
+
+label.label input[type="file"] {
+  position: absolute;
+  top: -1000px;
+}
+
+.label {
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 5px;
+  background: #dddddd;
+  display: inline-block;
+  /* margin-top: 10px; */
+}
+
+.label:hover {
+  background: #5cbd95;
+}
+
+.label:active {
+  background: #9fa1a0;
+}
+
+.label:invalid+span {
+  color: #000000;
+}
+
+.label:valid+span {
+  color: #ffffff;
 }
